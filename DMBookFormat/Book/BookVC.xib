@@ -18,6 +18,7 @@
                 <outlet property="sameSlider" destination="xGK-yt-6rg" id="zmg-Rp-ThC"/>
                 <outlet property="selectFilterBtn" destination="qPk-De-CNZ" id="sJa-eA-ewu"/>
                 <outlet property="selectRepeatBtn" destination="Y5O-lS-YVo" id="7mS-LE-IEE"/>
+                <outlet property="startBtn" destination="sng-zk-8W1" id="zqS-yx-6CH"/>
                 <outlet property="view" destination="Hz6-mo-xeY" id="0bl-1N-x8E"/>
             </connections>
         </customObject>

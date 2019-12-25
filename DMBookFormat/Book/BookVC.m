@@ -19,6 +19,7 @@
 @property (weak) IBOutlet NSButton *selectRepeatBtn;
 @property (weak) IBOutlet NSSliderCell *sameSlider;
 @property (weak) IBOutlet NSTextField *sameLab;
+@property (weak) IBOutlet NSButton *startBtn;
 
 @property (weak) IBOutlet NSProgressIndicator *progressChapter;
 @property (weak) IBOutlet NSProgressIndicator *progressFilter;
@@ -77,12 +78,12 @@
         return;
     }
     
+    _startBtn.enabled = NO;
     
     [self actionWithFilePath:filePath
                     isFilter:_selectFilterBtn.state == NSControlStateValueOn
                     isRepeat:_selectRepeatBtn.state == NSControlStateValueOn
                 minSameValue:_sameSlider.doubleValue / 100.0];
-    
 }
 
 - (void)actionWithFilePath:(NSString *)filePath
@@ -114,17 +115,16 @@
         
     } progressRepeat:^(NSInteger index, NSInteger total, BookChapterModel *chapter) {
         
-        double value = (double)index / (double)total * 100;
+        double value = (double)(index + selfWeak.repeats.count) / (double)total * 100;
         
         selfWeak.progressRepeat.doubleValue = value;
-        selfWeak.descTextView.string = [NSString stringWithFormat:@"repeat: %ld - %@",chapter.index,chapter.name];
+        selfWeak.descTextView.string = [NSString stringWithFormat:@"repeat:%.2f%% - %ld - %@",value,chapter.index,chapter.name];
         
     } findRepeat:^(BookChapterModel *chapter1, BookChapterModel *chapter2, double same) {
 
         NSString *str = [NSString stringWithFormat:@"重复章节: %.2f%% - %ld - %ld - %@ - %@",same*100, chapter1.index, chapter2.index, chapter1.name, chapter2.name];
         [selfWeak.repeats addObject:str];
-        selfWeak.descTextView.string = str;
-        NSLog(@"%@",str);
+        selfWeak.descTextView.string = [NSString stringWithFormat:@"%@\n%@",selfWeak.descTextView.string,str];
 
     } progressWrite:^(NSInteger index, NSInteger total, BookChapterModel *chapter) {
         double value = (double)index / (double)total * 100;
@@ -142,11 +142,11 @@
         } else {
             selfWeak.descTextView.string = [NSString stringWithFormat:@"%@ 完成!",[NSDate date]];
         }
-        
+        selfWeak.startBtn.enabled = YES;
     } error:^(NSError *error) {
         selfWeak.descTextView.string = [NSString stringWithFormat:@"error: %@",error.userInfo[@"msg"]];
+        selfWeak.startBtn.enabled = YES;
     }];
-        
 }
 
 - (void)dealloc
