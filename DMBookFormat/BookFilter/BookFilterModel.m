@@ -77,10 +77,12 @@ static NSString * const kBookFilterModel = @"kBookFilterModel";
 
 - (void)setFilePath:(NSString *)filePath
 {
-    _filePath = filePath;
+    NSString *filterStr = [NSString stringWithContentsOfFile:filePath encoding:NSUTF8StringEncoding error:nil];
     
-    NSString *filterStr = [NSString stringWithContentsOfFile:_filePath encoding:NSUTF8StringEncoding error:nil];
-    _filters = [filterStr componentsSeparatedByString:@"\n"];
+    if (filterStr) {
+        _filePath = filePath;
+        _filters = [filterStr componentsSeparatedByString:@"\n"];
+    }
 }
 
 - (void)sortAndSave

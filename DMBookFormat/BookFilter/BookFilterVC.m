@@ -55,9 +55,29 @@
         _pathTF.stringValue = fileURL.path;
         _filter.filePath = fileURL.path;
         
+        if (_filter.filters.count) {
+            _filterTV.string = [_filter.filters componentsJoinedByString:@"\n\n"];
+        }
+        
         [_filter saveDatas];
     }
 }
+
+- (IBAction)clickSortBtn:(id)sender
+{
+    if (!_pathTF.stringValue.length) {
+        _descTF.stringValue = @"请选择文件";
+    } else {
+        [_filter sortAndSave];
+        
+        if (_filter.filters) {
+            _filterTV.string = [_filter.filters componentsJoinedByString:@"\n\n"];
+            
+            _descTF.stringValue = @"排序成功";
+        }
+    }
+}
+
 
 - (IBAction)clickAddBtn:(id)sender
 {
