@@ -115,7 +115,7 @@
         
     } progressRepeat:^(NSInteger index, NSInteger total, BookChapterModel *chapter) {
         
-        double value = (double)(index + selfWeak.repeats.count) / (double)total * 100;
+        double value = (double)index / (double)total * 100;
         
         selfWeak.progressRepeat.doubleValue = value;
         selfWeak.descTextView.string = [NSString stringWithFormat:@"repeat:%.2f%% - %ld - %@",value,chapter.index,chapter.name];

@@ -10,6 +10,15 @@
 
 @implementation BookChapterModel
 
+- (void)setValuable:(BOOL)valuable
+{
+    _valuable = valuable;
+    
+    if (!_valuable) {
+        _contents = nil;
+    }
+}
+
 - (NSString *)description
 {
     return [NSString stringWithFormat:@"index:%ld,name:%@,startIndex:%lld,endIndex:%lld",(long)self.index,self.name,self.startIndex,self.endIndex];

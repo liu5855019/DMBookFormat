@@ -294,14 +294,15 @@
     for (int i = 0; i < _chapters.count - 1; i++) {
         @autoreleasepool {
             BookChapterModel *chapter1 = _chapters[i];
-            if (chapter1.valuable == NO) {
-                continue;
-            }
             
             if (_progressRepeat) {
                 MAIN(^{
                     selfWeak.progressRepeat(chapter1.index, selfWeak.chapters.count, chapter1);
                 });
+            }
+            
+            if (chapter1.valuable == NO) {
+                continue;
             }
         
             for (int j = i+1; j < _chapters.count; j++) {
