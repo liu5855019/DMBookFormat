@@ -707,11 +707,11 @@
             <objects>
                 <viewController id="XfG-lQ-9wD" customClass="ViewController" sceneMemberID="viewController">
                     <view key="view" id="m2S-Jp-Qdl">
-                        <rect key="frame" x="0.0" y="0.0" width="480" height="270"/>
+                        <rect key="frame" x="0.0" y="0.0" width="480" height="285"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
                             <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="wfW-DY-nWs">
-                                <rect key="frame" x="193" y="202" width="94" height="32"/>
+                                <rect key="frame" x="193" y="217" width="94" height="32"/>
                                 <buttonCell key="cell" type="push" title="编码修正" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="A2O-vf-ggk">
                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                     <font key="font" metaFont="system"/>
@@ -720,9 +720,8 @@
                                     <action selector="clickFixEncodingBtn:" target="XfG-lQ-9wD" id="qV1-n5-FVi"/>
                                 </connections>
                             </button>
-                            <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="K0m-zS-yEB">
-                                <rect key="frame" x="162" y="133" width="157" height="32"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                            <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="K0m-zS-yEB">
+                                <rect key="frame" x="161" y="156" width="158" height="32"/>
                                 <buttonCell key="cell" type="push" title="编辑&quot;广告过滤&quot;文件" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="eHm-ep-cqF">
                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                     <font key="font" metaFont="system"/>
@@ -731,9 +730,18 @@
                                     <action selector="clickEditFilterBtn:" target="XfG-lQ-9wD" id="xHT-ZW-Fkc"/>
                                 </connections>
                             </button>
-                            <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="HCW-eu-Psx">
-                                <rect key="frame" x="188" y="53" width="107" height="32"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                            <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="SXW-Dr-9j6">
+                                <rect key="frame" x="193" y="34" width="94" height="32"/>
+                                <buttonCell key="cell" type="push" title="正则测试" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="fVo-f8-l5d">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" size="13" name=".PingFangSC-Regular"/>
+                                </buttonCell>
+                                <connections>
+                                    <action selector="clickBookRegularBtn:" target="XfG-lQ-9wD" id="aQY-V8-iOR"/>
+                                </connections>
+                            </button>
+                            <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="HCW-eu-Psx">
+                                <rect key="frame" x="187" y="95" width="107" height="32"/>
                                 <buttonCell key="cell" type="push" title="小说格式化" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="HUg-3z-94w">
                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                     <font key="font" metaFont="system"/>
@@ -744,14 +752,20 @@
                             </button>
                         </subviews>
                         <constraints>
-                            <constraint firstItem="wfW-DY-nWs" firstAttribute="top" secondItem="m2S-Jp-Qdl" secondAttribute="top" constant="40" id="C8S-kf-45l"/>
-                            <constraint firstItem="wfW-DY-nWs" firstAttribute="centerX" secondItem="m2S-Jp-Qdl" secondAttribute="centerX" id="vbZ-8M-wTa"/>
+                            <constraint firstItem="SXW-Dr-9j6" firstAttribute="centerX" secondItem="K0m-zS-yEB" secondAttribute="centerX" id="6YJ-XP-Otz"/>
+                            <constraint firstItem="K0m-zS-yEB" firstAttribute="top" secondItem="wfW-DY-nWs" secondAttribute="bottom" constant="40" id="715-y9-37f"/>
+                            <constraint firstItem="wfW-DY-nWs" firstAttribute="centerX" secondItem="K0m-zS-yEB" secondAttribute="centerX" id="TPl-gv-PPI"/>
+                            <constraint firstItem="HCW-eu-Psx" firstAttribute="top" secondItem="K0m-zS-yEB" secondAttribute="bottom" constant="40" id="XsA-Q6-As7"/>
+                            <constraint firstItem="HCW-eu-Psx" firstAttribute="centerX" secondItem="K0m-zS-yEB" secondAttribute="centerX" id="Xyh-lC-l3F"/>
+                            <constraint firstItem="wfW-DY-nWs" firstAttribute="centerX" secondItem="m2S-Jp-Qdl" secondAttribute="centerX" id="YW1-ql-AeO"/>
+                            <constraint firstItem="SXW-Dr-9j6" firstAttribute="top" secondItem="HCW-eu-Psx" secondAttribute="bottom" constant="40" id="xPo-6p-L5M"/>
+                            <constraint firstItem="wfW-DY-nWs" firstAttribute="top" secondItem="m2S-Jp-Qdl" secondAttribute="top" constant="40" id="yGG-32-i4u"/>
                         </constraints>
                     </view>
                 </viewController>
                 <customObject id="rPt-NT-nkU" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="75" y="676"/>
+            <point key="canvasLocation" x="75" y="683.5"/>
         </scene>
     </scenes>
 </document>

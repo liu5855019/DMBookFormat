@@ -11,6 +11,7 @@
 #import "FixEncodingVC.h"
 #import "BookFilterVC.h"
 #import "BookVC.h"
+#import "BookRegularVC.h"
 
 @implementation ViewController
 
@@ -37,6 +38,13 @@
 - (IBAction)clickFixBookBtn:(id)sender
 {
     BookVC *vc = [[BookVC alloc] init];
+    
+    [self presentViewControllerAsModalWindow:vc];
+}
+
+- (IBAction)clickBookRegularBtn:(id)sender
+{
+    BookRegularVC *vc = [[BookRegularVC alloc] init];
     
     [self presentViewControllerAsModalWindow:vc];
 }

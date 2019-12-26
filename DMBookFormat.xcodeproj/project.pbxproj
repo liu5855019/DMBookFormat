@@ -25,6 +25,8 @@
 		0AEF53FD23AA07EA00108337 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0AEF53FC23AA07EA00108337 /* Assets.xcassets */; };
 		0AEF540023AA07EA00108337 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0AEF53FE23AA07EA00108337 /* Main.storyboard */; };
 		0AEF540323AA07EA00108337 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 0AEF540223AA07EA00108337 /* main.m */; };
+		0AF4CE1A23B4987C00A90CB4 /* BookRegularVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 0AF4CE1823B4987C00A90CB4 /* BookRegularVC.m */; };
+		0AF4CE1B23B4987C00A90CB4 /* BookRegularVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0AF4CE1923B4987C00A90CB4 /* BookRegularVC.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -61,6 +63,9 @@
 		0AEF540123AA07EA00108337 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0AEF540223AA07EA00108337 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		0AEF540423AA07EA00108337 /* DMBookFormat.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = DMBookFormat.entitlements; sourceTree = "<group>"; };
+		0AF4CE1723B4987C00A90CB4 /* BookRegularVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BookRegularVC.h; sourceTree = "<group>"; };
+		0AF4CE1823B4987C00A90CB4 /* BookRegularVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BookRegularVC.m; sourceTree = "<group>"; };
+		0AF4CE1923B4987C00A90CB4 /* BookRegularVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BookRegularVC.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -134,6 +139,7 @@
 		0AEF53F523AA07B700108337 /* DMBookFormat */ = {
 			isa = PBXGroup;
 			children = (
+				0AF4CE1623B4983C00A90CB4 /* BookRegular */,
 				0A07A17C23B1F34D00744154 /* Tools */,
 				0A07A18023B204BA00744154 /* Book */,
 				0A07A17323B1E51C00744154 /* BookFilter */,
@@ -159,6 +165,16 @@
 				0A07A17023B1B0AE00744154 /* FixEncodingVC.xib */,
 			);
 			path = FixEncoding;
+			sourceTree = "<group>";
+		};
+		0AF4CE1623B4983C00A90CB4 /* BookRegular */ = {
+			isa = PBXGroup;
+			children = (
+				0AF4CE1723B4987C00A90CB4 /* BookRegularVC.h */,
+				0AF4CE1823B4987C00A90CB4 /* BookRegularVC.m */,
+				0AF4CE1923B4987C00A90CB4 /* BookRegularVC.xib */,
+			);
+			path = BookRegular;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -218,6 +234,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0AF4CE1B23B4987C00A90CB4 /* BookRegularVC.xib in Resources */,
 				0AEF53FD23AA07EA00108337 /* Assets.xcassets in Resources */,
 				0A07A17223B1B0AE00744154 /* FixEncodingVC.xib in Resources */,
 				0AEF540023AA07EA00108337 /* Main.storyboard in Resources */,
@@ -246,6 +263,7 @@
 				0AEF53F823AA07B700108337 /* AppDelegate.m in Sources */,
 				0A07A18423B204E200744154 /* BookVC.m in Sources */,
 				0A07A18E23B2054300744154 /* BookChapterModel.m in Sources */,
+				0AF4CE1A23B4987C00A90CB4 /* BookRegularVC.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
