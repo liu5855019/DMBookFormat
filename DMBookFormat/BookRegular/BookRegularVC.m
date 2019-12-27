@@ -8,6 +8,8 @@
 
 #import "BookRegularVC.h"
 
+#import "NSArray+DMTools.h"
+
 @interface BookRegularVC ()
 
 @property (weak) IBOutlet NSTextField *pathTF;
@@ -87,6 +89,8 @@
             [muarr addObject:str];
         }
     }
+    
+    muarr = [[muarr deleteRepeatString] mutableCopy];
     
     if (muarr.count) {
         _descTV.string = [muarr componentsJoinedByString:@"\n\n"];
